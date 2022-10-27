@@ -8,7 +8,7 @@ namespace Blog
 {
     public class Program
     {
-        private const string CONNECTION_STRING = @"Server=localhost,1433;Database=Blog;User ID=sa;Password=068678HFtp";
+        private const string CONNECTION_STRING = @"Server=localhost,1433;Database=Blog;User ID=sa;Password=123456Sa";
         public static void Main(string[] args)
         {
             var connection = new SqlConnection();
@@ -16,26 +16,36 @@ namespace Blog
 
             ReadUsers(connection);
             ReadRoles(connection);
+            ReadTags(connection);
             
             connection.Close();
         }
 
         public static void ReadUsers(SqlConnection connection)
         {
-            var repository = new UserRepository(connection);
-            var users = repository.Get();
+            var repository = new Repository<User>(connection);
+            var items = repository.Get();
             
-            foreach( var user in users)
-                Console.WriteLine(user.Name);
+            foreach( var item in items)
+                Console.WriteLine(item.Name);
         }
 
         public static void ReadRoles(SqlConnection connection)
         {
-            var repository = new RoleRepository(connection);
-            var roles = repository.Get();
+            var repository = new Repository<Role>(connection);
+            var items = repository.Get();
 
-            foreach (var role in roles)
-                Console.WriteLine(role.Name);
+            foreach (var item in items)
+                Console.WriteLine(item.Name);
+        }
+
+        public static void ReadTags(SqlConnection connection)
+        {
+            var repository = new Repository<Tag>(connection);
+            var items = repository.Get();
+
+            foreach (var item in items)
+                Console.WriteLine(item.Name);
         }
     }
 }
