@@ -1,22 +1,21 @@
 ﻿using System;
 using Blog.Models;
 using Blog.Repositories;
-using Dapper.Contrib.Extensions;
 using Microsoft.Data.SqlClient;
 
 namespace Blog
 {
     public class Program
     {
-        private const string CONNECTION_STRING = @"Server=localhost,1433;Database=Blog;User ID=sa;Password=123456Sa";
+        private const string CONNECTION_STRING = @"Server=localhost,1433;Database=Blog;User ID=sa;Password=123456Sa;Trusted_Connection=False;TrustServerCertificate=True;";
         public static void Main(string[] args)
         {
-            var connection = new SqlConnection();
+            var connection = new SqlConnection(CONNECTION_STRING);
             connection.Open();
 
-            //ReadUsers(connection);
-            //ReadRoles(connection);
-            //ReadTags(connection);
+            ReadUsers(connection);
+            ReadRoles(connection);
+            ReadTags(connection);
             ReadUsersWithRoles(connection);
             
             connection.Close();
