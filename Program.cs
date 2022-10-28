@@ -1,6 +1,7 @@
 ﻿using System;
 using Blog.Models;
 using Blog.Repositories;
+using Blog.Screens.MenuRoleScreens;
 using Blog.Screens.MenuTagScreens;
 using Microsoft.Data.SqlClient;
 
@@ -31,9 +32,9 @@ namespace Blog
             Console.WriteLine("2 - Gestão de perfil");
             Console.WriteLine("3 - Gestão de categoria");
             Console.WriteLine("4 - Gestão de tag");
-            Console.WriteLine("5 - Vincular perfil/usuário");
-            Console.WriteLine("6 - Vincular post/tag");
-            Console.WriteLine("7 - Relatórios");
+            //Console.WriteLine("5 - Vincular perfil/usuário");
+            //Console.WriteLine("6 - Vincular post/tag");
+            //Console.WriteLine("7 - Relatórios");
             Console.WriteLine();
             Console.WriteLine();
             var option = short.Parse(Console.ReadLine()!);
@@ -42,11 +43,11 @@ namespace Blog
             {
                 /*case 1:
                     MenuUserScreen.Load();
-                    break;
+                    break;*/
                 case 2:
                     MenuRoleScreen.Load();
                     break;
-                case 3:
+                /*case 3:
                     MenuCategoryScreen.Load();
                     break;*/
                 case 4:
