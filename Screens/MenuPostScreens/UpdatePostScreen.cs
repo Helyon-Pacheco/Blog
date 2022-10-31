@@ -13,15 +13,15 @@ namespace Blog.Screens.MenuPostScreens
             Console.WriteLine("--------------");
             Console.WriteLine("Digite o Id do post que deseja alterar: ");
             var id = Console.ReadLine()!;
-            Console.WriteLine("Nome: ");
-            var name = Console.ReadLine()!;
+            Console.WriteLine("Título: ");
+            var title = Console.ReadLine()!;
             Console.WriteLine("Id da Categoria: ");
-            var categoryId = int.Parse(Console.ReadLine()!);
+            var slug = Console.ReadLine()!;
             Update(new Post
             {
                 Id = int.Parse(id),
-                Name = name,
-                CategoryId = categoryId
+                Title = title,
+                Slug = slug
             });
             Console.ReadKey();
             MenuPostScreen.Load();

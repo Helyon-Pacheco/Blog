@@ -5,6 +5,7 @@ using Blog.Screens.MenuCategoryScreens;
 using Blog.Screens.MenuPostScreens;
 using Blog.Screens.MenuRoleScreens;
 using Blog.Screens.MenuTagScreens;
+using Blog.Screens.MenuUserScreens;
 using Microsoft.Data.SqlClient;
 
 namespace Blog
@@ -44,9 +45,9 @@ namespace Blog
 
             switch (option)
             {
-                /*case 1:
+                case 1:
                     MenuUserScreen.Load();
-                    break;*/
+                    break;
                 case 2:
                     MenuRoleScreen.Load();
                     break;
@@ -56,9 +57,9 @@ namespace Blog
                 case 4:
                     MenuTagScreen.Load();
                     break;
-                /*case 5:
+                case 5:
                     MenuPostScreen.Load();
-                    break;*/
+                    break;
                 default: Load(); break;
             }
         }

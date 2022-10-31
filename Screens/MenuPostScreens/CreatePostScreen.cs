@@ -11,14 +11,14 @@ namespace Blog.Screens.MenuPostScreens
             Console.Clear();
             Console.WriteLine("Criar novo post");
             Console.WriteLine("--------------");
-            Console.WriteLine("Nome: ");
-            var name = Console.ReadLine()!;
-            Console.WriteLine("Id da Categoria: ");
-            var categoryId = int.Parse(Console.ReadLine()!);
+            Console.WriteLine("Título: ");
+            var title = Console.ReadLine()!;
+            Console.WriteLine("Slug: ");
+            var slug = Console.ReadLine()!;
             Create(new Post
             {
-                Name = name,
-                CategoryId = categoryId
+                Title = title,
+                Slug = slug
             });
             Console.ReadKey();
             MenuPostScreen.Load();

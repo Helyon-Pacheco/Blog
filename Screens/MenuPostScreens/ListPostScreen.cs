@@ -21,7 +21,7 @@ namespace Blog.Screens.MenuPostScreens
             var repository = new Repository<Post>(Database.Connection);
             var posts = repository.Get();
             foreach (var item in posts)
-                Console.WriteLine($"{item.Id} - {item.Name} ({item.CategoryId})");
+                Console.WriteLine($"{item.Id} - {item.Title} ({item.Slug})");
         }
     }
 }
