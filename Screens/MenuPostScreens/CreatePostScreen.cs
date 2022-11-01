@@ -13,11 +13,23 @@ namespace Blog.Screens.MenuPostScreens
             Console.WriteLine("--------------");
             Console.WriteLine("Título: ");
             var title = Console.ReadLine()!;
+            Console.WriteLine("Sumario: ");
+            var summary = Console.ReadLine()!;
+            Console.WriteLine("Corpo: ");
+            var body = Console.ReadLine()!;
+            Console.WriteLine("Id Autor: ");
+            var authorId = int.Parse(Console.ReadLine()!);
+            Console.WriteLine("Id Categoria: ");
+            var categoryId = int.Parse(Console.ReadLine()!);
             Console.WriteLine("Slug: ");
             var slug = Console.ReadLine()!;
             Create(new Post
             {
                 Title = title,
+                Summary = summary,
+                Body = body,
+                AuthorId = authorId,
+                CategoryId = categoryId,
                 Slug = slug
             });
             Console.ReadKey();

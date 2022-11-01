@@ -15,12 +15,24 @@ namespace Blog.Screens.MenuPostScreens
             var id = Console.ReadLine()!;
             Console.WriteLine("Título: ");
             var title = Console.ReadLine()!;
-            Console.WriteLine("Id da Categoria: ");
+            Console.WriteLine("Sumario: ");
+            var summary = Console.ReadLine()!;
+            Console.WriteLine("Corpo: ");
+            var body = Console.ReadLine()!;
+            Console.WriteLine("Id Autor: ");
+            var authorId = int.Parse(Console.ReadLine()!);
+            Console.WriteLine("Id Categoria: ");
+            var categoryId = int.Parse(Console.ReadLine()!);
+            Console.WriteLine("Slug: ");
             var slug = Console.ReadLine()!;
             Update(new Post
             {
                 Id = int.Parse(id),
                 Title = title,
+                Summary = summary,
+                Body = body,
+                AuthorId = authorId,
+                CategoryId = categoryId,
                 Slug = slug
             });
             Console.ReadKey();
